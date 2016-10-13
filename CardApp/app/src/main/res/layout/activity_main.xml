@@ -8,10 +8,15 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_color"/>
+
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="center"
-        android:src="@drawable/logodesenho"
+        android:src="@drawable/imglogo"
         android:layout_below="@id/textNome"
         android:id="@+id/logo"/>
 
@@ -25,35 +30,24 @@
         android:textAlignment="center"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
-        android:textSize="30dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp" />
+        android:textSize="36dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Saúde na Palma da Mão"
-        android:textSize="20dp"
+        android:textSize="24dp"
+        android:textStyle="italic"
         android:layout_below="@id/logo"
         android:layout_centerHorizontal="true"
         android:id="@+id/textSlogan"/>
 
-    <TextView
+     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="contato@nossasaude.com"
-        android:layout_below="@id/textSite"
-        android:textSize="16dp"
-        android:paddingTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textContato"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:textSize="16dp"
-        android:text="www.nossasaude.com.br"
+        android:paddingTop="10dp"
+        android:textSize="18dp"
+        android:text="www.nossasaudeapp.com.br"
         android:layout_below="@id/textSlogan"
         android:layout_centerHorizontal="true"
         android:id="@+id/textSite" />
@@ -61,8 +55,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="contato@nossasaude.com"
+        android:layout_below="@id/textSite"
+        android:textSize="16dp"
+        android:paddingTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textContato"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Av. Washington Luis 423, Santos - SP"
         android:textSize="16dp"
+        android:paddingTop="5dp"
         android:layout_below="@id/textContato"
         android:layout_centerHorizontal="true"
         android:id="@+id/textEndereco"/>
