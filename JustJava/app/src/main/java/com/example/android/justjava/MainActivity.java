@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.android.justjava.R;
 
 import java.text.NumberFormat;
+import java.text.StringCharacterIterator;
 
 import static android.R.attr.required;
 
@@ -35,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        display(quantity);
-        displayMessage(quantity * price);
+        int price = calculatePrice();
+        displayMessage(createOrderSummary(price));
     }
 
     /**
@@ -48,22 +49,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the given quantity value on the screen.
+     * This method displays the given text on the screen.
      */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    private void displayMessage(String message) {
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
 
     /**
-     * This method displays the given text on the screen.
+     * Calculates the price of the order based on the current quantity.
+     *
+     * @return the price
      */
-    private void displayMessage(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText("Total:" + NumberFormat.getCurrencyInstance().format(number)
-            + "\nThank you!");
+    private int calculatePrice() {
+        return quantity * 5;
     }
 
+    private String createOrderSummary(int price){
+        String priceMessage = "Name: Kaptai Kunal";
+        priceMessage += "\nQuantity: "+quantity;
+        priceMessage += "\nTotal: $" + price;
+        priceMessage += "\nThank you!";
+        return priceMessage;
+    }
     /**
      * This method is called when the plus button is clicked.
      */
