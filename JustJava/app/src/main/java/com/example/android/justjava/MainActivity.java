@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
+
 import static android.R.attr.name;
 
 /**
@@ -52,20 +54,20 @@ public class MainActivity extends AppCompatActivity {
         Log.v("MainActivity", "Name: " + userName);
 
         String[] adress = new String[]{"felipe_lima_simoes@hotmail.com"};
-        composeEmail(adress, "Just Java order for"+userName, createOrderSummary(price));
-//        displayMessage(createOrderSummary(price));
+//        composeEmail(adress, "Just Java order for"+userName, createOrderSummary(price));
+        displayMessage(createOrderSummary(price));
     }
 
-    public void composeEmail(String[] addresses, String subject, String body) {
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
-        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        intent.putExtra(Intent.EXTRA_TEXT, body);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
+//    public void composeEmail(String[] addresses, String subject, String body) {
+//        Intent intent = new Intent(Intent.ACTION_SENDTO);
+//        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+//        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+//        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+//        intent.putExtra(Intent.EXTRA_TEXT, body);
+//        if (intent.resolveActivity(getPackageManager()) != null) {
+//            startActivity(intent);
+//        }
+//    }
     /**
      * This method displays the given quantity value on the screen.
      */
@@ -99,12 +101,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String createOrderSummary(int price) {
-        String priceMessage = "Name: "+ userName ;
-        priceMessage += "\nAdd whipped cream? " + hasWhippedCream;
-        priceMessage += "\nAdd chocolate? " + hasChocolate;
-        priceMessage += "\nQuantity: " + quantity;
-        priceMessage += "\nTotal: $" + price;
-        priceMessage += "\nThank you!";
+        String priceMessage = getString(R.string.order_summary_name, userName) ;
+        priceMessage += "\n" + getString(R.string.order_summary_whipped_cream, hasWhippedCream);
+        priceMessage += "\n" + getString(R.string.order_summary_chocolate, hasChocolate);
+        priceMessage += "\n" + getString(R.string.order_summary_quantity, quantity);
+        priceMessage += "\n" + getString(R.string.order_summary_price, NumberFormat.getCurrencyInstance().format(price));
+        priceMessage += "\n" + getString(R.string.thank_you);
         return priceMessage;
     }
 
