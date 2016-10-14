@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.firstapp.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_color">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:layout_weight="1"
+            android:src="@drawable/photo"
+            android:id="@+id/imageView" />
+
+        <TextView
+            android:text="Pet Shop Aumigos"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="28dp"
+            android:textColor="#616161"
+            android:layout_weight="0"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nome" />
+
+        <TextView
+            android:text="Banho e tosa, artigos para domésticos, ração de todos os tipos e mais"
+            android:layout_weight="0"
+            android:padding="10sp"
+            android:textSize="18dp"
+            android:textColor="#616161"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/descricao" />
+
+        <TextView
+            android:text="Rua Euclides da Cunha, 73 \nCEP 11065110 - Santos, SP"
+            android:layout_weight="0"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="18dp"
+            android:textColor="#616161"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3" />
+
+        <TextView
+            android:text="Seg. à Sexta: 08h45 - 19h00\n(13) 3289-4189"
+            android:layout_weight="0"
+            android:textColor="#616161"
+            android:textStyle="bold"
+            android:padding="10sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4" />
+
+    </LinearLayout>
+</RelativeLayout>
