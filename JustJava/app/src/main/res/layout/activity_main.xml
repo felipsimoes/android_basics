@@ -23,12 +23,8 @@
             android:id="@+id/name_field"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/toppings"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:textAllCaps="true"/>
+            style="@style/HeaderTextStyle"
+            android:text="@string/toppings" />
 
         <CheckBox
             android:id="@+id/whipped_cream_checkbox"
@@ -48,12 +44,8 @@
 
         <TextView
             android:id="@+id/text_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/quantity"
-            android:textAllCaps="true"/>
+            style="@style/HeaderTextStyle"
+            android:text="@string/quantity" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -87,11 +79,8 @@
 
         <TextView
             android:id="@+id/text_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/order"
-            android:textAllCaps="true"/>
+            style="@style/HeaderTextStyle"
+            android:text="@string/order" />
 
         <TextView
             android:id="@+id/order_summary_text_view"
