@@ -27,22 +27,26 @@
 
         <Button
             style="@style/ButtonPointStyle"
-            android:onClick="addSixPointsForTeamA"
+            android:id="@+id/button_A6"
+            android:onClick="onSubmit"
             android:text="@string/touchdown"/>
 
         <Button
             style="@style/ButtonPointStyle"
-            android:onClick="addThreePointsForTeamA"
+            android:id="@+id/button_A3"
+            android:onClick="onSubmit"
             android:text="@string/field_goal"/>
 
         <Button
             style="@style/ButtonPointStyle"
-            android:onClick="addTwoPointsForTeamA"
+            android:id="@+id/button_A2"
+            android:onClick="onSubmit"
             android:text="@string/safety"/>
 
         <Button
             style="@style/ButtonPointStyle"
-            android:onClick="addOnePointForTeamA"
+            android:id="@+id/button_A1"
+            android:onClick="onSubmit"
             android:text="@string/extra_point"/>
 
     </LinearLayout>
@@ -66,22 +70,26 @@
 
         <Button
             style="@style/ButtonPointStyle"
-            android:onClick="addSixPointsForTeamB"
+            android:id="@+id/button_B6"
+            android:onClick="onSubmit"
             android:text="@string/touchdown" />
 
         <Button
             style="@style/ButtonPointStyle"
-            android:onClick="addThreePointsForTeamB"
+            android:id="@+id/button_B3"
+            android:onClick="onSubmit"
             android:text="@string/field_goal" />
 
         <Button
             style="@style/ButtonPointStyle"
-            android:onClick="addTwoPointsForTeamB"
+            android:id="@+id/button_B2"
+            android:onClick="onSubmit"
             android:text="@string/safety"/>
 
         <Button
             style="@style/ButtonPointStyle"
-            android:onClick="addOnePointForTeamB"
+            android:id="@+id/button_B1"
+            android:onClick="onSubmit"
             android:text="@string/extra_point"/>
     </LinearLayout>
 
