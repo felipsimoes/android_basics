@@ -13,9 +13,11 @@
     <string name="q1opt1">Rudyard Kipling</string>
     <string name="q1opt2">John Keats</string>
     <string name="q1opt3">Lewis Carroll</string>
-    <string name=""></string>
-    <string name=""></string>
-    <string name=""></string>
+
+    <string name="q3opt1">Browning</string>
+    <string name="q3opt2">Marx</string>
+    <string name="q3opt3">Shakespeare</string>
+    
     <string name=""></string>
     <string name=""></string>
 
