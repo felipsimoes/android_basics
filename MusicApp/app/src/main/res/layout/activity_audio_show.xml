@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_audio_show"
+    style="@style/LinearLayoutParentStyle"
+    android:orientation="vertical"
+    tools:context=".AudioShowActivity">
+
+    <LinearLayout
+        style="@style/DescriptionStyle">
+
+        <TextView
+            style="@style/TextStyle"
+            android:text="@string/audio_show_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        <LinearLayout
+            style="@style/DescriptionStyle">
+            <TextView
+                style="@style/ShowDetailInfo"
+                android:layout_weight="2"
+                android:text="@string/file_date"/>
+            <TextView
+                style="@style/ShowImageButton"
+                android:text="@string/file_length"/>
+            <TextView
+                style="@style/ShowImageButton"
+                android:text="@string/file_size"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/info_show"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/LinearPCStyle">
+
+        <ImageButton
+            style="@style/ShowImageButton"
+            android:id="@+id/play_show_button"
+            android:src="@android:drawable/ic_media_play"/>
+        <ImageButton
+            style="@style/ShowImageButton"
+            android:id="@+id/add_library_button"
+            android:src="@android:drawable/ic_input_add"/>
+    </LinearLayout>
+</LinearLayout>

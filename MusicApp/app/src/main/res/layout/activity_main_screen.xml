@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_screen"
+    style="@style/LinearLayoutParentStyle"
+    android:orientation="vertical"
+    tools:context=".MainScreenActivity">
+
+    <LinearLayout
+        style="@style/DescriptionStyle">
+
+        <TextView
+            style="@style/TextStyle"
+            android:text="@string/main_screen_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            style="@style/ShowImageButton"
+            android:orientation="vertical">
+
+            <Button
+                style="@style/PStyle"
+                android:id="@+id/b1"
+                android:text="@string/podcast_1"/>
+            <Button
+                style="@style/PStyle"
+                android:id="@+id/b2"
+                android:text="@string/podcast_2"/>
+            <Button
+                style="@style/PStyle"
+                android:id="@+id/b3"
+                android:text="@string/podcast_3"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/ShowImageButton"
+            android:orientation="vertical">
+
+            <Button
+                style="@style/PStyle"
+                android:id="@+id/b4"
+                android:text="@string/podcast_4"/>
+            <Button
+                style="@style/PStyle"
+                android:id="@+id/b5"
+                android:text="@string/podcast_5"/>
+            <Button
+                style="@style/PStyle"
+                android:id="@+id/b6"
+                android:text="@string/podcast_6"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

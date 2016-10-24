@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MusicApp</string>
+
+    <string name="main_screen_text">User\'s PodCasts</string>
+    <string name="audio_show_text">Show\'s Info</string>
+    <string name="podcast_text">Specific PodCast Library</string>
+    <string name="now_playing_text">Info about the PodCast Playing</string>
+
+    <string name="podcast_1">podcast #1</string>
+    <string name="podcast_2">podcast #2</string>
+    <string name="podcast_3">podcast #3</string>
+    <string name="podcast_4">podcast #4</string>
+    <string name="podcast_5">podcast #5</string>
+    <string name="podcast_6">podcast #6</string>
+
+    <string name="show_1">show #1</string>
+    <string name="show_2">show #2</string>
+    <string name="show_3">show #3</string>
+
+    <string name="file_date">22/10/2016</string>
+    <string name="file_length">86min</string>
+    <string name="file_size">26MB</string>
+    <string name="info_show">Info about this show</string>
+    <string name="show_description">Description for this show</string>
+    <string name="podcast_playing_name">PodCast Playing Name</string>
+</resources>

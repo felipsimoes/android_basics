@@ -11,7 +11,8 @@
     <LinearLayout
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
         android:orientation="vertical"
         tools:context=".MainActivity">
 
@@ -22,6 +23,7 @@
                 style="@style/QuestionStyle"
                 android:text="@string/question1" />
             <RadioGroup
+                android:id="@+id/radio_group_one"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -48,6 +50,11 @@
                 style="@style/QuestionStyle"
                 android:text="@string/question2" />
 
+            <EditText
+                android:id="@+id/answerTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="14"/>
         </LinearLayout>
 
         <LinearLayout
@@ -57,6 +64,11 @@
                 style="@style/QuestionStyle"
                 android:text="@string/question3" />
 
+            <EditText
+                android:id="@+id/answerThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="William Shakespeare"/>
         </LinearLayout>
 
         <LinearLayout
@@ -66,6 +78,11 @@
                 style="@style/QuestionStyle"
                 android:text="@string/question4" />
 
+            <EditText
+                android:id="@+id/answerFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Peter Pan"/>
         </LinearLayout>
 
         <LinearLayout
@@ -75,6 +92,24 @@
                 style="@style/QuestionStyle"
                 android:text="@string/question5" />
 
+            <RadioGroup
+                android:id="@+id/radio_group_five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/q5opt1_radio_button"
+                    style="@style/RadioStyle"
+                    android:text="@string/q5opt1"/>
+                <RadioButton
+                    android:id="@+id/q5opt2_radio_button"
+                    style="@style/RadioStyle"
+                    android:text="@string/q5opt2"/>
+                <RadioButton
+                    android:id="@+id/q5opt3_radio_button"
+                    style="@style/RadioStyle"
+                    android:text="@string/q5opt3"/>
+            </RadioGroup>
         </LinearLayout>
 
         <LinearLayout
@@ -83,6 +118,23 @@
             <TextView
                 style="@style/QuestionStyle"
                 android:text="@string/question6" />
+
+            <CheckBox
+                android:id="@+id/checkboxOpt1"
+                style="@style/CheckBoxStyle"
+                android:text="@string/q6opt1"/>
+            <CheckBox
+                android:id="@+id/checkboxOpt2"
+                style="@style/CheckBoxStyle"
+                android:text="@string/q6opt2"/>
+            <CheckBox
+                android:id="@+id/checkboxOpt3"
+                style="@style/CheckBoxStyle"
+                android:text="@string/q6opt3"/>
+            <CheckBox
+                android:id="@+id/checkboxOpt4"
+                style="@style/CheckBoxStyle"
+                android:text="@string/q6opt4"/>
 
         </LinearLayout>
 
@@ -93,17 +145,17 @@
                 style="@style/QuestionStyle"
                 android:text="@string/question7" />
 
+            <EditText
+                android:id="@+id/answerSeven"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Hobbit"/>
         </LinearLayout>
 
-        <LinearLayout
-            style="@style/LinearQAGroup" >
-
-            <TextView
-                style="@style/QuestionStyle"
-                android:text="@string/question8" />
-
-        </LinearLayout>
-
+        <Button
+            android:id="@+id/button_submit"
+            style="@style/SubmitButtonStyle"
+            android:text="@string/submit"/>
     </LinearLayout>
 
 </ScrollView>
