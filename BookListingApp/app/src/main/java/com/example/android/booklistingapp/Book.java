@@ -1,17 +1,21 @@
 package com.example.android.booklistingapp;
 
+import java.io.Serializable;
+
 /**
  * Created by Felipe on 25/10/2016.
  */
 
-public class EventBook {
+public class Book implements Serializable {
 
     private String title;
     private String publisher;
+    private String authors;
 
-    public EventBook(String t, String p){
+    public Book(String t, String p, String a){
         title = t;
         publisher = p;
+        authors = a;
     }
 
     public String getPublisher() {
@@ -29,4 +33,8 @@ public class EventBook {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public String getAuthors() { return authors; }
+
+    public void setAuthors(String authors) { this.authors = authors; }
 }

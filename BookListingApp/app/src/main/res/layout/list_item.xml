@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linear_item"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title_text"
+        style="@style/ListItem"
+        tools:text="Title"/>
+
+    <TextView
+        android:id="@+id/authors_text"
+        style="@style/ListItem"
+        tools:text="Authors"/>
+
+    <TextView
+        android:id="@+id/publisher_text"
+        style="@style/ListItem"
+        tools:text="Publisher"/>
+</LinearLayout>
