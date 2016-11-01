@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+
+    <string name="title">Title</string>
+    <string name="section">Section</string>
+
+    <string name="titleLayout">Title: %1$s</string>
+    <string name="sectionLayout">Section: %1$s</string>
+
+</resources>

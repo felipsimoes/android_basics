@@ -1,4 +1,4 @@
-package com.example.android.booklistingapp;
+package com.example.android.newsapp;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -15,9 +15,9 @@ import java.util.List;
  * Created by Felipe on 25/10/2016.
  */
 
-public class BookAdapter extends ArrayAdapter<Book> {
+public class NewsAdapter extends ArrayAdapter<News> {
 
-    public BookAdapter(Context context, List<Book> objects) {
+    public NewsAdapter(Context context, List<News> objects) {
         super(context, 0, objects);
     }
 
@@ -37,28 +37,23 @@ public class BookAdapter extends ArrayAdapter<Book> {
             holder = (ViewHolder) listItemView.getTag();
         }
 
-        Book currentBook = getItem(position);
+        News currentNews = getItem(position);
         Resources res = getContext().getResources();
-        holder.titleText.setText(res.getString(R.string.titleLayout, currentBook.getTitle()));
-        holder.authorsText.setText(res.getString(R.string.authorsLayout,currentBook.getAuthors()));
-        holder.publisherText.setText(res.getString(R.string.publisherLayout,currentBook.getPublisher()));
+        holder.titleText.setText(res.getString(R.string.titleLayout, currentNews.getWebTitle()));
+        holder.sectionText.setText(res.getString(R.string.sectionLayout, currentNews.getSectionName()));
 
         return listItemView;
     }
 
     private void createHolder(ViewHolder holder, View view) {
         holder.titleText = (TextView) view.findViewById(R.id.title_text) ;
-        holder.authorsText = (TextView) view.findViewById(R.id.authors_text);
-        holder.publisherText = (TextView) view.findViewById(R.id.publisher_text);
+        holder.sectionText = (TextView) view.findViewById(R.id.section_text);
         view.setTag(holder);
     }
 
     static class ViewHolder {
-
         TextView titleText;
-        TextView authorsText;
-        TextView publisherText;
-
+        TextView sectionText;
     }
 
 }

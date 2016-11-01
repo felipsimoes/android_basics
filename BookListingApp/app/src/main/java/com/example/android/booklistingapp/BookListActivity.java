@@ -24,10 +24,8 @@ public class BookListActivity extends AppCompatActivity {
         setContentView(R.layout.book_list);
 
         Intent intent = getIntent();
-//        ArrayList<Book> books = intent.getExtras().getParcelable(MainActivity.BOOKS_ARRAY);
-        ArrayList<Book> books = (ArrayList<Book>) intent.getSerializableExtra(MainActivity.BOOKS_ARRAY);
+        ArrayList<Book> books = intent.getParcelableArrayListExtra(MainActivity.BOOKS_ARRAY);
         adapter = new BookAdapter(this, books);
-        adapter.addAll(books);
 
         listView = (ListView) findViewById(R.id.book_list);
         listView.setAdapter(adapter);

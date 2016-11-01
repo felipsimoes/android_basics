@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">BookListingApp</string>
 
-    <string name="test">Test</string>
+    <string name="test">Android</string>
     <string name="search">Search</string>
+    <string name="title">Title</string>
+    <string name="authors">Authors</string>
+    <string name="publisher">Publisher</string>
+
+    <string name="titleLayout">Title: %1$s</string>
+    <string name="authorsLayout">Author(s): %1$s</string>
+    <string name="publisherLayout">Publisher : %1$s</string>
+
+    <string name="noResult">Please, try another term to search</string>
+    <string name="noDataInfo">Search books by typing a word or term and make a search</string>
+
 </resources>

@@ -12,12 +12,8 @@
         tools:text="@string/title"/>
 
     <TextView
-        android:id="@+id/authors_text"
+        android:id="@+id/section_text"
         style="@style/ListItem"
-        tools:text="@string/authors"/>
+        tools:text="@string/section"/>
 
-    <TextView
-        android:id="@+id/publisher_text"
-        style="@style/ListItem"
-        tools:text="@string/publisher"/>
 </LinearLayout>

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Xml;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,9 +26,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -80,19 +83,25 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateUI(ArrayList<Book> books) {
         Intent intent = new Intent(this, BookListActivity.class);
-        intent.putExtra(BOOKS_ARRAY, books);
+        intent.putParcelableArrayListExtra(BOOKS_ARRAY, books);
         startActivity(intent);
     }
 
     private void noDataMessage() {
-        textView.setText("Please, try another term to search");
+        textView.setText(R.string.noResult);
     }
 
     public String getSearchURL() {
         String searchURL = BOOKS_API_REQUEST_URL_DEFAULT;
         if (!TextUtils.isEmpty(editText.getText())){
-            String searchTerm = editText.getText().toString();
-            searchTerm = searchTerm.replace(" ", "%");
+
+            String searchTerm = null;
+            try {
+                searchTerm = URLEncoder.encode(
+                        editText.getText().toString().trim(), "utf-8");
+            } catch (UnsupportedEncodingException e) {
+                Log.e(LOG_TAG,"ERRO DE ENCONDING");
+            }
             searchURL = BOOKS_API_REQUEST_URL
                     .concat(searchTerm)
                     .concat(maxResults);
@@ -139,14 +148,18 @@ public class MainActivity extends AppCompatActivity {
                 JSONArray itemsArray = baseJsonResp.getJSONArray("items");
                 JSONObject object;
                 JSONObject volumeInfo;
-                String title, publisher, authors;
+                String title, publisher = "-", authors = "-";
                 if (itemsArray.length() > 0 ){
                     for (int i = 0; i < itemsArray.length(); i++) {
                         object = itemsArray.getJSONObject(i);
                         volumeInfo = object.getJSONObject("volumeInfo");
                         title = volumeInfo.getString("title");
-                        publisher = volumeInfo.getString("publisher");
-                        authors = setStringFromJSONArray(volumeInfo.getJSONArray("authors"));
+                        if(volumeInfo.has("publisher")){
+                            publisher = volumeInfo.getString("publisher");
+                        }
+                        if (volumeInfo.has("authors")){
+                            authors = setStringFromJSONArray(volumeInfo.getJSONArray("authors"));
+                        }
                         books.add(new Book(title,publisher,authors));
                     }
                     return books;
@@ -164,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 stringReturn = authors.getString(0).toString();
                 if(authors.length() > 1){
                     for (int i = 1; i < authors.length(); i++) {
-                        stringReturn += ",".concat(authors.getString(i).toString());
+                        stringReturn += ", ".concat(authors.getString(i).toString());
                     }
                 }
             } catch (JSONException e) {
