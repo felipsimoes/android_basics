@@ -18,10 +18,9 @@ import com.example.android.inventoryapp.data.ProductContract.ProductEntry;
 
 public class ProductProvider extends ContentProvider {
 
+    public static final String LOG_TAG = ProductProvider.class.getSimpleName();
     private static final int PRODUCTS = 100;
-
     private static final int PRODUCT_ID = 101;
-
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
     static {
@@ -30,8 +29,6 @@ public class ProductProvider extends ContentProvider {
         sUriMatcher.addURI(ProductContract.CONTENT_AUTHORITY,
                 ProductContract.PATH_PRODUCTS + "/#", PRODUCT_ID);
     }
-
-    public static final String LOG_TAG = ProductProvider.class.getSimpleName();
 
     private ProductDbHelper mDbHelper;
 
@@ -101,34 +98,46 @@ public class ProductProvider extends ContentProvider {
     }
 
     private void validateInputs(ContentValues values) {
-        String name = values.getAsString(ProductEntry.COLUMN_PRODUCT_NAME);
-        if (name == null || !TextUtils.isEmpty(name)) {
-            throw new IllegalArgumentException("Product requires a name");
+        if (values.containsKey(ProductEntry.COLUMN_PRODUCT_NAME)) {
+            String name = values.getAsString(ProductEntry.COLUMN_PRODUCT_NAME);
+            if (name == null || TextUtils.isEmpty(name)) {
+                throw new IllegalArgumentException("Product requires a name");
+            }
         }
 
-        String image = values.getAsString(ProductEntry.COLUMN_PRODUCT_IMAGE);
-        if (image == null || !TextUtils.isEmpty(image)) {
-            throw new IllegalArgumentException("Product requires valid image");
+        if(values.containsKey(ProductEntry.COLUMN_PRODUCT_IMAGE)){
+            byte[] image = values.getAsByteArray(ProductEntry.COLUMN_PRODUCT_IMAGE);
+            if (image == null) {
+                throw new IllegalArgumentException("Product requires valid image");
+            }
         }
 
-        Float price = values.getAsFloat(ProductEntry.COLUMN_PRODUCT_PRICE);
-        if (price != null && price < 0) {
-            throw new IllegalArgumentException("Product requires valid price");
+        if(values.containsKey(ProductEntry.COLUMN_PRODUCT_PRICE)){
+            Double price = values.getAsDouble(ProductEntry.COLUMN_PRODUCT_PRICE);
+            if (price == null && price < 0) {
+                throw new IllegalArgumentException("Product requires valid price");
+            }
         }
 
-        Integer stock = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_STOCK);
-        if (stock != null && stock < 0) {
-            throw new IllegalArgumentException("Product requires valid stock value");
+        if(values.containsKey(ProductEntry.COLUMN_PRODUCT_STOCK)){
+            Integer stock = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_STOCK);
+            if (stock == null && stock < 0) {
+                throw new IllegalArgumentException("Product requires valid stock value");
+            }
         }
 
-        Integer sales = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_SALES);
-        if (sales != null && sales < 0) {
-            throw new IllegalArgumentException("Product requires valid sales");
+        if(values.containsKey(ProductEntry.COLUMN_PRODUCT_SALES)){
+            Integer sales = values.getAsInteger(ProductEntry.COLUMN_PRODUCT_SALES);
+            if (sales == null && sales < 0) {
+                throw new IllegalArgumentException("Product requires valid sales");
+            }
         }
 
-        String contact = values.getAsString(ProductEntry.COLUMN_SUPPLIER_CONTACT);
-        if (name == null || !TextUtils.isEmpty(contact)) {
-            throw new IllegalArgumentException("Product requires a valid contact for supplier");
+        if(values.containsKey(ProductEntry.COLUMN_SUPPLIER_CONTACT)){
+            String contact = values.getAsString(ProductEntry.COLUMN_SUPPLIER_CONTACT);
+            if (contact == null || TextUtils.isEmpty(contact)) {
+                throw new IllegalArgumentException("Product requires a valid contact for supplier");
+            }
         }
     }
 
